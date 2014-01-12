@@ -28,11 +28,13 @@ void loop()
 {
   cm = getDistance();
   if (cm > 5){
-    LeftW.writeMicroseconds(1300);
+    LeftW.write(120);
+    RightW.write(60);
     digitalWrite(13, HIGH);}
   else{ 
     digitalWrite(13, LOW);
-    LeftW.writeMicroseconds(1700);
+    LeftW.write(60);
+    RightW.write(120);
    }
   Serial.println(cm);
 }
@@ -58,5 +60,4 @@ long getDistance()
   cm = duration/27/2;
   return cm;
 }
-
 
